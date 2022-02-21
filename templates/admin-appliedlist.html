@@ -1,0 +1,40 @@
+{% extends 'admin-base.html' %} {% block title %} Application List {% endblock title %} {% block body %}
+
+<!-- Start Applicants Area -->
+<div class="all-applicants-box">
+    <h2>Applicants</h2>
+
+    <div class="row">
+        {% for applicant in totalappli %}
+        <div class="col-lg-6 col-md-12">
+            <div class="single-applicants-card">
+                <div class="image">
+                    <a href="#"><img src="static/images/applicants/applicants-1.jpg" alt="image"></a>
+                </div>
+
+                <div class="content">
+                    <h3>
+                        <a href="candidates-details-1.html">{{applicant[0]}}</a>
+                    </h3>
+                    <span>{{applicant[1]}}</span>
+                    <br>
+                    <p style="font-size: small;">Applied for <span>{{applicant[2]}}</span>  Role in <span>{{applicant[3]}}</span></p>
+
+                    <div class="applicants-footer">
+                        <ul class="option-list">
+                            <li><button class="option-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="View Aplication" type="button"><i class="ri-eye-line"></i></button></li>
+                            <li><button class="option-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="Approve Aplication" type="button"><i class="ri-check-line"></i></button></li>
+                            <li><button class="option-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="Reject Aplication" type="button"><i class="ri-close-line"></i></button></li>
+                            <li><button class="option-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Aplication" type="button"><i class="ri-delete-bin-line"></i></button></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>Applied Date: {{applicant[4]}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- Start Applicants Area -->
+
+{% endblock body %}
